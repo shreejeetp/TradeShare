@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Theme One</title>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'/>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script>
+function submmit(){
+var x = window.event.keyCode;
+if(x==13){
+alert("enter");
+}
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="logo-menu-container">
+    <div class="logo">Trade Care</div>
+    <div class="menu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li class="nobg"><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  </div>
+  <div class="clear"></div>
+  <div class="page">
+    <div class="main-banner">
+	<h1>
+	Contact us
+	</h1>
+	<br>
+	<br>
+	<form class="contactform" id="contactform" method="post" action="#">
+<div class="error"></div>
+<div class="heading">
+<h2>Contact us</h2>
+<h3>Have a question for feedback? please fill the form below to contact us.</h3>
+</div>
+<div class="group cu_field">
+<input type="text" class="b-bar" id="cu_name" name="cu_name"><span class="highlight"></span><span class="bar"></span>
+<label for="cu_name">Name</label>
+</div>
+<div class="group cu_field">
+<input type="email" class="b-bar" id="cu_email" name="cu_email" onfocus="myfunction()"><span class="highlight"></span><span class="bar"></span>
+<label for="cu_email">Email</label>
+</div>
+<div class="group cu_field">
+
+<label for="cu_sub">Subject</label>
+<select class="subject-s" id="cu_sub" name="cu_sub">
+<option value="general-queries">General Queries</option>
+<option value="customer-feedback">Customer Feedback</option>
+<option value="cash-back">Cash Back </option>
+<option value="loyalty-points">Loyalty Points Queries</option>
+<option value="price-difference">Price Difference</option>
+<option value="seller-queries">Seller Queries</option>
+<option value="happy-hours">Happy Hours</option>
+</select>
+</div>
+<div class="group cu_field">
+
+<label for="cu_msg">Message</label>
+<textarea class="t-area" id="cu_msg" name="cu_msg"></textarea>
+</div>
+<input type="submit" id="cu_submit" class="btn btn-block btn-blue btn-xxxl" value="Submit" onclick="return contactformValidator();">
+</form>
+  </div> 	
+<div class="footer-wrapper">
+  <div class="footer-top"></div>
+  <div class="footer-center">
+    <div class="footer-content-left">
+      <h1>In tempor aliquam purus eu sagittis</h1>
+      <h2>Sed ultrices tristique magna non accumsan massa vel libero posuere sagitt nisi</h2>
+      <p>Aenean sit amet leo elit, nec ornare felis. Fusce laoreet sapien id ipsum pharetra varius. Integer a turpis tortor. Aliquam ac dignissim nibh. Mauris at posuere felis. Proin egestas, dolor ut imperdiet porta, velit lorem luctus massa, a pharetra felis lorem a nulla. </p>
+      <p>Vivamus vel augue et nibh accumsan tempus nec sed metus. Nam porta massa non sapien congue lobortis. Nam pulvinar suscipit tellus id vestibulum. </p>
+    </div>
+    <div class="footer-content-right">
+      <h1>Nullam eleme</h1>
+      <h2>Nam fermentum ornare dui</h2>
+      <p>Proin egestas, dolor ut imperdiet porta, velit lorem luctus massa, a pharetra felis lorem a nulla  ivam.</p>
+      <h3>Email: info@untitled.com</h3>
+      <h3>Phone: (800) 555-0000</h3>
+    </div>
+  </div>
+  <div class="footer-bottom"></div>
+</div>
+<div class="clear"></div>
+<div class="copyrights">Copyright (c) Untitled. Design by wwww.alltemplateneeds.com . Photos by photorack.net
+  <div class="copyrights-bottom"></div>
+</div>
+</body>
+</html>

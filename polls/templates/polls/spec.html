@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/user.css">
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">R.C </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="http://127.0.0.1:8000/home">Home </a></li>
+                    <li role="presentation"><a href="#">Top Searches</a></li>
+                    <li role="presentation"><a href="#">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row product">
+            <div class="col-md-5 col-md-offset-0"><img class="img-responsive" src="{{imgsrc}}"></div>
+            <div class="col-md-7">
+                <h2>{{q1}}</h2>
+                <h3>{{plist.0}} </h3>
+                <button class="btn btn-primary" type="button" onclick="window.location.href='{{bestbuy}}'">Best Buy</button>
+            </div>
+        </div>
+        {% if descboo == 1 %}
+        <div class="page-header">
+            <h3>Product Details</h3></div>
+        <p>{{desc}} </p>
+        {% endif %}
+        <div class="page-header" ng-app="myApp" ng-controller="myCtrl">
+            <h3>Compare Prices</h3></div>
+        <div class="bsec" style="float: left;">
+        <ul style=" list-style-type: none;">
+            {% for sp in slist %}
+            <li>
+             <img src="{{sp}}">
+            </li>
+            <br>
+            {% endfor %}
+            
+        </ul>
+        </div>
+        <div class="asec" style="float: right;">
+            <ul style=" list-style-type: none;">
+                {% for sp1 in plist %}
+            <li>
+                {{sp1}}
+            </li>
+            <br>
+            {% endfor %}
+            </ul>
+
+        </div>
+        {% for sp1 in plist %}
+        <br>
+        <br>
+        {% endfor %}
+        <br>
+        <br> 
+        {% if specboo == 1 %}    
+         <div class="page-header">
+            <h3>Positives and Negatives<button class="btn btn-primary write-review" type="button" style="visibility: hidden;l">Write a review</button></h3></div> 
+             <img src="http://127.0.0.1:8000/static/images/pros.png" align="left">
+             <h4>PROS.</h4>
+             <div class="asec" style="float: left;">
+            <ul style=" list-style-type: none;">
+                {% for gd1 in gd %}
+            <li>
+                {{gd1}}
+            </li>
+            <br>
+            {% endfor %}
+            </ul></div>
+                   {% for g1 in gd %}
+        <br>
+        <br>
+        {% endfor %}
+        <br>
+        <br>
+             <img src="http://127.0.0.1:8000/static/images/cons.png" align="right">
+             <div style="float: right;">
+             <h4>CONS.</h4>
+             </div>
+             <br>
+             <br>
+             <div class="asec" style="float: right;">
+            <ul style=" list-style-type: none;">
+                {% for bd1 in bd %}
+            <li>
+                {{bd1}}
+            </li>
+            <br>
+            {% endfor %}
+            </ul>
+        </div>
+           {% for sp1 in plist %}
+        <br>
+        <br>
+        <br>
+        <br>
+        {% endfor %}
+        <br>
+        <br>
+        {% endif %}
+        
+        <div class="page-header">
+            <h3>Reviews<button class="btn btn-primary write-review" type="button" style="visibility: hidden;">Write a review</button></h3>
+        </div>
+        <div class="media">
+            <div class="media-body">
+                {%for r1,r2,r3 in rev%}
+
+                <h4>{{r2}}</h4>
+                <div id="{% cycle 'str1' 'str2' 'str3' 'str4' 'str5' 'str6' 'str7' 'str8' 'str9' 'str10'%}"><i id="star" class="fa fa-star"></i></div>
+                <p>{{r3}}</p>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
+            </div>
+        </div>
+    </footer>
+    <script src="http://127.0.0.1:8000/static/css/jquery.min.js"></script>
+    <script src="http://127.0.0.1:8000/static/css/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var itm = document.getElementById("star");
+        var str=[];
+        var l={{str|length}}
+        {%for st in str%}
+        str.push({{st}})
+        {%endfor%}
+        for (var i = 0; i < str.length; i++) {
+            
+        }
+
+    </script>
+</body>
+
+</html>

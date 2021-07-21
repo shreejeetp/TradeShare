@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/user1.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/css/user.css">
+    <script type="text/javascript">
+        
+        function submmit(){
+        var f=document.getElementById("sa").value;
+        var url="http://127.0.0.1:8000/search/"+f
+        var s=document.getElementById("f1").action=url
+    //    window.location.href = 'http://127.0.0.1:8000/search/'+f;
+        
+        }
+    </script>
+     
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">R.C </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="http://127.0.0.1:8000/home">Home </a></li>
+                    <li role="presentation"><a href="#">Top Searches</a></li>
+                    <li role="presentation"><a href="#">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    {% for p1,p2,p3,p4 in prod %}
+<div class="col-md-2 column productbox">
+    <img src="{{p2}}" class="img-responsive">
+    <div class="producttitle">{{p1}}</div>
+    <div class="productprice"><div class="pull-right">
+        <a href="{{p4}}" class="btn btn-danger btn-sm" role="button">BUY</a></div>
+    <div class="pricetext">{{p3}}</div></div>
+</div> 
+
+{% endfor %}   
+</body>
+
+</html>
